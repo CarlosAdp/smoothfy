@@ -3,12 +3,12 @@ import os
 
 import aws_cdk as cdk
 
-from backend.backend_stack import BackendStack
+from backend.storage_stack import StorageStack
 
 
 app = cdk.App()
-BackendStack(
-    app, "SmoothFyBackendStack",
+StorageStack(
+    app, "SmoothFyStorageStack",
     env=cdk.Environment(
         account=os.getenv('CDK_DEFAULT_ACCOUNT'),
         region=os.getenv('CDK_DEFAULT_REGION')
