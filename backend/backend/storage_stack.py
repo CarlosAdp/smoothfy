@@ -20,7 +20,7 @@ class StorageStack(cdk.Stack):
                 type=dynamodb.AttributeType.STRING
             ),
             sort_key=dynamodb.Attribute(
-                name='ResultOffset',
+                name='Offset',
                 type=dynamodb.AttributeType.NUMBER
             ),
             time_to_live_attribute='TTL',
