@@ -52,7 +52,6 @@ def handler(event: dict, context: dict) -> dict:
                         {'Id': artist['id'], 'Name': artist['name']}
                         for artist in track['track']['artists']
                     ],
-                    'ReleaseYear': track['track']['album']['release_date'][:4],
                 }
                 for track in response['items']
             ]
