@@ -58,7 +58,14 @@ def handler(event: dict, context: dict) -> dict:
                     'track.id': 'Id',
                     'track.name': 'Name',
                     'track.artists': 'Artists',
-                })\
+                })
+            tracks['Artists'] = tracks['Artists'].apply(
+                lambda artists: [{
+                    'Id': artist['id'],
+                    'Name': artist['name'],
+                } for artist in artists]
+            )
+            tracks = tracks\
                 .set_index('Id')\
                 .join(features, how='inner')\
                 .reset_index()
